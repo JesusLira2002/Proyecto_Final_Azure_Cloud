@@ -1,0 +1,14 @@
+node_modules/
+bin/
+obj/
+.vscode/
+.git/
+.gitignore
+local.settings.json
+*.zip
+*.7z
+*.rar
+*.tar
+npm-debug.log
+yarn-debug.log
+yarn-error.log
