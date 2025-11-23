@@ -64,11 +64,10 @@ Delete (Borrar): Eliminación de registros desde el backend (SQL).
 
 Frontend (Sitio Web Público):
 https://web-jesus-frontend-final.azurewebsites.net
-(Nota: El enlace puede dejar de estar disponible si se eliminan los recursos de Azure).
 
 💻 Cómo ejecutar este proyecto localmente
 
-Si deseas probar el código en tu propia máquina, sigue estos pasos:
+Si deseas probar el código en tu propia compu, sigue estos pasos:
 
 Prerrequisitos
 
@@ -92,7 +91,7 @@ cd backend
 npm install
 
 
-Crea un archivo local.settings.json en la carpeta backend (este archivo no se sube a GitHub por seguridad) con el siguiente contenido:
+Crea un archivo local.settings.json en la carpeta backend con el siguiente contenido:
 
 {
   "IsEncrypted": false,
