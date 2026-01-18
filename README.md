@@ -125,9 +125,5 @@ CORS (Cross-Origin Resource Sharing): Configurado estrictamente en la Azure Func
 Variables de Entorno: La cadena de conexión a la base de datos se gestiona de forma segura.
 
 Autor: Jesus Eduardo Lira Prieto
-       Salvador Fragoso Velázquez
-       Alondra Monserrat Rico Guerrero
-       Javier Osvaldo Tavarez Muñiz
-       Jose Manuel Miramontes Espinoza
 
 Fecha: Noviembre 2025
