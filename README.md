@@ -9,8 +9,6 @@ Backend: Node.js (v20 LTS), Azure Functions (HTTP Trigger), librería mssql.
 
 Base de Datos: Azure SQL Database (Nivel Básico DTU).
 
-Bash
-npm start
-Una vez que la consola confirme que la API local está escuchando, abre el archivo frontend/index.html directamente en tu navegador para interactuar con la aplicación.
+
 
 Autor: Jesús Eduardo Lira Prieto | Noviembre 2025
