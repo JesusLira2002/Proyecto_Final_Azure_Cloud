@@ -1,129 +1,16 @@
-☁️ Proyecto Final: Sistema CRUD Distribuido en Azure
+Sistema CRUD Distribuido en Azure
+Cómo funciona
+Este sistema implementa una arquitectura Serverless distribuida en tres capas para registrar y gestionar usuarios. El flujo comienza en una interfaz web que captura los datos y los envía mediante peticiones HTTP. Una API serverless recibe la información, valida el formato JSON y ejecuta las operaciones CRUD (crear, leer, actualizar, borrar) directamente sobre una base de datos relacional. Para demostrar alta disponibilidad y manejo de regiones en la nube, cada componente opera de forma aislada geográficamente: el cliente en North Central US, la lógica de negocio en East US 2 y la persistencia de datos en West US 2.
 
-Este repositorio contiene el código fuente y la documentación de una arquitectura Serverless desplegada en Microsoft Azure. El sistema permite registrar usuarios mediante un formulario web, procesar la información con una función en la nube y almacenarla en una base de datos SQL.
+Tecnologías
+Frontend: HTML5, CSS (Bootstrap), JavaScript (Vanilla/Fetch API).
 
-🚀 Arquitectura del Sistema
+Backend: Node.js (v20 LTS), Azure Functions (HTTP Trigger), librería mssql.
 
-El proyecto implementa una arquitectura de 3 capas distribuida geográficamente para demostrar alta disponibilidad y manejo de regiones en la nube:
+Base de Datos: Azure SQL Database (Nivel Básico DTU).
 
-Frontend (Capa de Presentación):
-
-Tecnología: HTML5, CSS (Bootstrap), JavaScript (Fetch API).
-
-Hospedaje: Azure App Service (Web App) en Windows.
-
-Región: North Central US.
-
-Función: Interfaz de usuario para capturar datos.
-
-Backend (Capa Lógica):
-
-Tecnología: Azure Functions (Node.js v20 LTS).
-
-Modelo: HTTP Trigger (Serverless).
-
-Hospedaje: App Service Plan (B1).
-
-Región: East US 2 (Virginia).
-
-Función: API que recibe el JSON, valida datos y conecta con SQL.
-
-Base de Datos (Capa de Datos):
-
-Tecnología: Azure SQL Database.
-
-Nivel: Basic (DTU-based).
-
-Región: West US 2.
-
-Función: Persistencia segura de la información.
-
-🛠️ Tecnologías Utilizadas
-
-Lenguajes: JavaScript (Node.js), SQL, HTML/CSS.
-
-Nube: Microsoft Azure.
-
-Herramientas: Visual Studio Code, Azure CLI, Git.
-
-Librerías: mssql (Driver nativo para SQL Server).
-
-📋 Funcionalidades (CRUD)
-
-El sistema cumple con los requisitos del proyecto final:
-
-Create (Crear): Formulario web público que envía datos a la nube.
-
-Read (Leer): Verificación de datos mediante consultas SQL en el portal de Azure.
-
-Update (Actualizar): Gestión de datos desde el backend (SQL).
-
-Delete (Borrar): Eliminación de registros desde el backend (SQL).
-
-🌐 Enlaces del Proyecto
-
-Frontend (Sitio Web Público):
-https://web-jesus-frontend-final.azurewebsites.net
-
-💻 Cómo ejecutar este proyecto localmente
-
-Si deseas probar el código en tu propia compu, sigue estos pasos:
-
-Prerrequisitos
-
-Node.js (v18 o superior).
-
-Azure Functions Core Tools.
-
-Visual Studio Code con extensión de Azure.
-
-1. Clonar el repositorio
-
-git clone [https://github.com/JesusLira2002/Proyecto_Final_Azure_Cloud.git](https://github.com/JesusLira2002/Proyecto_Final_Azure_Cloud.git)
-cd Proyecto_Final_Azure_Cloud
-
-
-2. Configurar el Backend
-
-Entra a la carpeta del servidor:
-
-cd backend
-npm install
-
-
-Crea un archivo local.settings.json en la carpeta backend con el siguiente contenido:
-
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "node"
-  },
-  "Host": {
-    "CORS": "*"
-  }
-}
-
-
-Nota: Necesitarás tu propia cadena de conexión a SQL Server y colocarla en el archivo src/functions/CrearUsuario.js.
-
-3. Ejecutar
-
-Inicia el backend:
-
+Bash
 npm start
+Una vez que la consola confirme que la API local está escuchando, abre el archivo frontend/index.html directamente en tu navegador para interactuar con la aplicación.
 
-
-Abre el archivo frontend/index.html en tu navegador.
-
-Asegúrate de cambiar la URL en el index.html para que apunte a http://localhost:7071/....
-
-🔒 Seguridad Implementada
-
-CORS (Cross-Origin Resource Sharing): Configurado estrictamente en la Azure Function para permitir peticiones solo desde el Frontend autorizado (o * en modo desarrollo), deshabilitando credenciales inseguras.
-
-Variables de Entorno: La cadena de conexión a la base de datos se gestiona de forma segura.
-
-Autor: Jesus Eduardo Lira Prieto
-
-Fecha: Noviembre 2025
+Autor: Jesús Eduardo Lira Prieto | Noviembre 2025
